@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate () {
         // Add a forward force
-        rb.AddForce(-forwardForceMovement * Time.deltaTime, 0, 0);
+        // rb.AddForce(-forwardForceMovement * Time.deltaTime, 0, 0);
 
         // If the player is pressing the d or a keys
         
@@ -37,6 +37,16 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Left arrow key was pressed.");
             rb.AddForce(0, 0, -sidewaysForceMovement * Time.deltaTime);
         }
+
+        if (Input.GetKey("s") || Input.GetKey("down")) {
+            rb.AddForce(forwardForceMovement * Time.deltaTime, 0, 0);
+        }
+
+        if (Input.GetKey("w") || Input.GetKey("up")) {
+            rb.AddForce(-forwardForceMovement * Time.deltaTime, 0, 0);
+        }
+
+
     }
     
 }
