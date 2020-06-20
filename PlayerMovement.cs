@@ -28,11 +28,13 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetKey("d") || Input.GetKeyDown(KeyCode.RightArrow))	 {
             // Add a force to the right
+            Debug.Log("Right arrow key was pressed.");
             rb.AddForce(0, 0, sidewaysForceMovement * Time.deltaTime);
         }
 
         if (Input.GetKey("a") || Input.GetKeyDown(KeyCode.LeftArrow)) {
             // Add a force to the left
+            Debug.Log("Left arrow key was pressed.");
             rb.AddForce(0, 0, -sidewaysForceMovement * Time.deltaTime);
         }
     }
