@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     public Rigidbody rb;
@@ -17,36 +16,37 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
-    
-    void FixedUpdate () {
+
+    void FixedUpdate()
+    {
         // Add a forward force
         // rb.AddForce(-forwardForceMovement * Time.deltaTime, 0, 0);
 
         // If the player is pressing the d or a keys
-        
-        if (Input.GetKey("d") || Input.GetKey("right"))	 {
+
+        if (Input.GetKey("d") || Input.GetKey("right"))
+        {
             // Add a force to the right
-            Debug.Log("Right arrow key was pressed.");
+            // Debug.Log("Right arrow key was pressed.");
             rb.AddForce(0, 0, sidewaysForceMovement * Time.deltaTime);
         }
 
-        if (Input.GetKey("a") || Input.GetKey("left")) {
+        if (Input.GetKey("a") || Input.GetKey("left"))
+        {
             // Add a force to the left
-            Debug.Log("Left arrow key was pressed.");
+            // Debug.Log("Left arrow key was pressed.");
             rb.AddForce(0, 0, -sidewaysForceMovement * Time.deltaTime);
         }
 
-        if (Input.GetKey("s") || Input.GetKey("down")) {
+        if (Input.GetKey("s") || Input.GetKey("down"))
+        {
             rb.AddForce(forwardForceMovement * Time.deltaTime, 0, 0);
         }
 
-        if (Input.GetKey("w") || Input.GetKey("up")) {
+        if (Input.GetKey("w") || Input.GetKey("up"))
+        {
             rb.AddForce(-forwardForceMovement * Time.deltaTime, 0, 0);
         }
-
-
     }
-    
 }
