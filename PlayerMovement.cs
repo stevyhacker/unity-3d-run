@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     
     void FixedUpdate () {
@@ -26,13 +26,13 @@ public class PlayerMovement : MonoBehaviour
 
         // If the player is pressing the d or a keys
         
-        if (Input.GetKey("d") || Input.GetKeyDown(KeyCode.RightArrow))	 {
+        if (Input.GetKey("d") || Input.GetKey("right"))	 {
             // Add a force to the right
             Debug.Log("Right arrow key was pressed.");
             rb.AddForce(0, 0, sidewaysForceMovement * Time.deltaTime);
         }
 
-        if (Input.GetKey("a") || Input.GetKeyDown(KeyCode.LeftArrow)) {
+        if (Input.GetKey("a") || Input.GetKey("left")) {
             // Add a force to the left
             Debug.Log("Left arrow key was pressed.");
             rb.AddForce(0, 0, -sidewaysForceMovement * Time.deltaTime);
