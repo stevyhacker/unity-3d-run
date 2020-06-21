@@ -11,9 +11,10 @@ public class CollisionMovement : MonoBehaviour
     void OnCollisionEnter(Collision collisionInfo)
     {
         // We check if the object we collided with has a tag called "Obstacle".
-        if (collisionInfo.collider.tag == "Obstacle")
+        if (collisionInfo.collider.CompareTag("Ground"))
         {
-            // movement.enabled = false; // Disable the players movement.
+            movement.enabled = false; // Disable the players movement.
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 }
