@@ -7,6 +7,15 @@ public class GameManager : MonoBehaviour
 {
     public float restartDelay = 1f;
 
+    public GameObject completeLevelUI;
+
+    public void CompleteLevel ()
+    {
+        completeLevelUI.SetActive(true);
+        Debug.Log("Next Level");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void EndGame()
     {
         Debug.Log("Game Over");

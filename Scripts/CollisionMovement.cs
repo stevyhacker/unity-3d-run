@@ -16,5 +16,10 @@ public class CollisionMovement : MonoBehaviour
             movement.enabled = false; // Disable the players movement.
             FindObjectOfType<GameManager>().EndGame();
         }
+
+        if (collisionInfo.collider.CompareTag("Goal"))
+        {
+            FindObjectOfType<GameManager>().CompleteLevel();
+        }
     }
 }
